@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecNew</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <script>
+    var c = 1;
+    var t;
+    var timer_is_on = 1;
+
+    function timedCount() {
+      document.getElementById('txt').value = c;
+      c = c+1;
+      t = setTimeout(function(){timedCount()}, 1000);
+    }
+
+    function record(number) {
+      var newRecord = rec_nums.insertRow(number);
+    }
+</script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
